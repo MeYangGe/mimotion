@@ -56,6 +56,7 @@ def getWeather():
             elif "特大暴雨" in res['data']['forecast'][0]['type']:
                 K = K_dict["特大暴雨"]
             type = res['data']['forecast'][0]['type']
+            print(type)
         else:
             print("获取天气情况出错")
 
@@ -69,6 +70,7 @@ def getBeijinTime():
     url = r'https://apps.game.qq.com/CommArticle/app/reg/gdate.php'
     if open_get_weather == "True":
         getWeather()
+        print(getWeather())
     r = requests.get(url=url, headers=hea)
     if r.status_code == 200:
         result = r.text
